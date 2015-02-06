@@ -8,7 +8,9 @@ import android.view.MenuItem;
 
 import com.example.MyClass;
 
-//import com.libs.MyLib;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -21,8 +23,16 @@ public class MainActivity extends ActionBarActivity {
     @Override public void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        MyClass a = new MyClass(3);
-        Log.d("nachosoto", String.format("test%d", a.getNumber()));
+        final MyClass a = new MyClass();
+
+        a.getNumbers()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<Integer>() {
+                    @Override public void call(final Integer integer) {
+                       Log.d("MainActivity", String.format("New number: %d", integer));
+                    }
+                });
     }
 
     @Override
