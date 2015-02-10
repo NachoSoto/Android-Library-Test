@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.CarModuleBuilder;
 import com.example.MyClass;
 
 import rx.android.schedulers.AndroidSchedulers;
@@ -18,6 +19,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        CarModuleBuilder.build();
     }
 
     @Override public void onAttachedToWindow() {
@@ -33,6 +36,8 @@ public class MainActivity extends ActionBarActivity {
                        Log.d("MainActivity", String.format("New number: %d", integer));
                     }
                 });
+
+        Log.d("MainActivity", a.getCarEngineName());
     }
 
     @Override
