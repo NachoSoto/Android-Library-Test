@@ -28,11 +28,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="rxjava-1.0.5" level="project" />
     <orderEntry type="library" exported="" name="dagger-2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" exported="" name="dagger-compiler-2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="guava-18.0" level="project" />
     <orderEntry type="library" exported="" name="javax.inject-1" level="project" />
-    <orderEntry type="library" exported="" name="dagger-producers-2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" exported="" name="auto-common-1.0-SNAPSHOT" level="project" />
   </component>
 </module>
 

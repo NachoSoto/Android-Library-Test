@@ -1,16 +1,23 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:1.0.0'
-  }
+    repositories {
+        jcenter()
+
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+//        maven { url 'org.batcha.gradle.plugins:git-dependencies:0.2' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+//        classpath 'org.batcha.gradle.plugins:git-dependencies:0.2'
+
+//        classpath 'com.jimdo.gradle:gradle-apt-plugin:0.5-SNAPSHOT' // TODO
+
+//        classpath 'com.layer:git-repo-plugin:1.0.0'
+    }
 }
 
-allprojects {
-  repositories {
-    jcenter()
-  }
-}
+//allprojects {
+//    repositories {
+//        jcenter()
+//    }
+//}

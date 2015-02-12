@@ -1,8 +1,19 @@
+//apply plugin: 'git-dependencies'
+
 allprojects {
-  repositories {
-    mavenCentral()
-    maven {
-      url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    repositories {
+        mavenCentral()
+        jcenter()
+
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+
+//        github("ypoluektovich", "gradle-apt-plugin", "master", "releases")
     }
-  }
+
+//    dependencies {
+//        compile('com.jimdo.gradle:gradle-apt-plugin:0.5-SNAPSHOT').ext.git = 'https://github.com/ypoluektovich/gradle-apt-plugin.git'
+//    }
 }
+
+//apply plugin: 'apt'
+apply from: 'https://raw.githubusercontent.com/ypoluektovich/gradle-apt-plugin/handle-all-javacompile-tasks/build.gradle'
